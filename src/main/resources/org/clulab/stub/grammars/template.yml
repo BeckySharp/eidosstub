@@ -1,0 +1,25 @@
+vars:
+  agents: "nsubj|'nsubj:xsubj'|'nsubjpass:xsubj'|nsubjpass|csubj|csubjpass|<acl"  #Comment:  nsubjpass for cause should not be there in an ideal world; but it does show up in practice
+  conjunctions: "appos|conj|conj_|cc"
+  complements: "xcomp|ccomp"
+  adverbial_clause: "advcl"
+  noun_modifiers: "amod|compound|dep|name"
+  negTriggers: "not"
+  objects: "dobj"
+  preps: "nmod_of|nmod_in|nmod_to|nmod_over|nmod_for"
+  prep_dobjs: "nmod"
+  quant_modifiers: "amod|advmod"
+  passive_agents: "nmod_by|nmod_agent|agent"
+  # Todo: nmod_from "X will follow from Y"
+
+rules:
+
+
+  - name: ported_syntax_1_verb-${addlabel}
+    priority: ${ rulepriority }
+    example: ""
+    label: ${ label }
+    pattern: |
+      trigger = [word=/(?i)^(${ trigger })/]
+      phenomenon: Concept = >nmod_of
+      attribute: Concept = >nmod_with

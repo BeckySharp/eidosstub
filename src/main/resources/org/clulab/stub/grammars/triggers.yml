@@ -1,0 +1,8 @@
+transpose_triggers: "move|shift"
+
+property_triggers: "cost|mass|percent|rate|ratio|volume"
+
+#  - Add
+#  - Delete
+#  - Copy
+

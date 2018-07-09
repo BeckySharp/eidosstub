@@ -1,0 +1,24 @@
+taxonomy: org/clulab/stub/grammars/taxonomy.yml
+
+vars: org/clulab/stub/grammars/triggers.yml
+
+  #correlation_triggers: "associat|correlat"
+  #other_triggers: "accept|direct|necess|overexpress|potenti|re-express|rescu|"
+
+rules:
+
+
+  # Extract the entities
+  - import: org/clulab/stub/grammars/entities.yml
+    vars:
+      rulepriority: "1"
+
+  # Extract the events
+
+  - import: org/clulab/stub/grammars/template.yml
+    vars:
+      rulepriority: "6"
+      addlabel: "Property"
+      label: Property
+      trigger: ${property_triggers}
+
